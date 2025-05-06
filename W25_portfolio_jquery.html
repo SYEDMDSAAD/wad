@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery Mobile -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+    .content-block {
+      padding: 15px;
+    }
+    .project-box, .skill-box {
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    .nav-bar {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<div data-role="page" id="home">
+  <div data-role="header">
+    <h1>My Portfolio</h1>
+  </div>
+
+  <div role="main" class="ui-content nav-bar">
+    <a href="#about" class="ui-btn ui-btn-inline">About Me</a>
+    <a href="#projects" class="ui-btn ui-btn-inline">Projects</a>
+    <a href="#skills" class="ui-btn ui-btn-inline">Skills</a>
+    <a href="#contact" class="ui-btn ui-btn-inline">Contact</a>
+  </div>
+
+  <div data-role="footer">
+    <h4>&copy; 2025 My Portfolio</h4>
+  </div>
+</div>
+
+<!-- About Me Page -->
+<div data-role="page" id="about">
+  <div data-role="header" data-add-back-btn="true">
+    <h1>About Me</h1>
+  </div>
+  <div class="ui-content content-block">
+    <p>Hello! I'm a passionate software developer with interests in web development, AI, and open-source projects. I enjoy solving problems and continuously learning new technologies.</p>
+  </div>
+</div>
+
+<!-- Projects Page -->
+<div data-role="page" id="projects">
+  <div data-role="header" data-add-back-btn="true">
+    <h1>Projects</h1>
+  </div>
+  <div class="ui-content content-block">
+    <div class="project-box">
+      <h3>Portfolio Website</h3>
+      <p>A personal responsive website built using HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="project-box">
+      <h3>Chatbot App</h3>
+      <p>A simple chatbot using Python and Flask with NLP support.</p>
+    </div>
+    <div class="project-box">
+      <h3>Task Manager</h3>
+      <p>A to-do list web app using Node.js and MongoDB for backend management.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Skills Page -->
+<div data-role="page" id="skills">
+  <div data-role="header" data-add-back-btn="true">
+    <h1>Skills</h1>
+  </div>
+  <div class="ui-content content-block">
+    <div class="skill-box"><strong>Languages:</strong> Python, JavaScript, C++</div>
+    <div class="skill-box"><strong>Web:</strong> HTML, CSS, React, Node.js</div>
+    <div class="skill-box"><strong>Databases:</strong> MongoDB, MySQL</div>
+    <div class="skill-box"><strong>Tools:</strong> Git, VS Code, Postman</div>
+  </div>
+</div>
+
+<!-- Contact Page -->
+<div data-role="page" id="contact">
+  <div data-role="header" data-add-back-btn="true">
+    <h1>Contact Info</h1>
+  </div>
+  <div class="ui-content content-block">
+    <p><strong>Email:</strong> yourname@example.com</p>
+    <p><strong>Phone:</strong> +91 98765 43210</p>
+    <p><strong>LinkedIn:</strong> linkedin.com/in/yourname</p>
+    <p><strong>GitHub:</strong> github.com/yourusername</p>
+  </div>
+</div>
+
+</body>
+</html>

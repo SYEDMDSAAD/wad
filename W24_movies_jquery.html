@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie Reviews</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- jQuery Mobile CDN -->
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+      .movie {
+        margin-bottom: 30px;
+      }
+      .poster {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+      }
+      .review-box {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #f9f9f9;
+      }
+      .header-style {
+        background: #333;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div data-role="page" id="reviews">
+      <div data-role="header" class="header-style">
+        <h1>Top Movie Reviews</h1>
+      </div>
+
+      <div role="main" class="ui-content">
+        <!-- Movie 1 -->
+        <div class="movie">
+          <h2>Inception</h2>
+          <img
+            src="https://via.placeholder.com/300x400?text=Inception+Poster"
+            alt="Inception Poster"
+            class="poster"
+          />
+          <p><strong>Genre:</strong> Sci-Fi, Thriller</p>
+          <p>
+            <strong>Summary:</strong> A skilled thief leads a team to implant an
+            idea into a CEO's mind using dream layers.
+          </p>
+          <div class="review-box">
+            <strong>Review:</strong> A mind-bending experience with stunning
+            visuals and a complex plot that keeps you thinking long after it
+            ends.
+          </div>
+        </div>
+
+        <!-- Movie 2 -->
+        <div class="movie">
+          <h2>Interstellar</h2>
+          <img
+            src="https://via.placeholder.com/300x400?text=Interstellar+Poster"
+            alt="Interstellar Poster"
+            class="poster"
+          />
+          <p><strong>Genre:</strong> Sci-Fi, Drama</p>
+          <p>
+            <strong>Summary:</strong> A team of explorers travel through a
+            wormhole in space in an attempt to save humanity.
+          </p>
+          <div class="review-box">
+            <strong>Review:</strong> Visually magnificent and emotionally
+            compelling. A powerful mix of science and human emotion.
+          </div>
+        </div>
+
+        <!-- Movie 3 -->
+        <div class="movie">
+          <h2>The Dark Knight</h2>
+          <img
+            src="https://via.placeholder.com/300x400?text=Dark+Knight+Poster"
+            alt="Dark Knight Poster"
+            class="poster"
+          />
+          <p><strong>Genre:</strong> Action, Crime, Drama</p>
+          <p>
+            <strong>Summary:</strong> Batman faces his greatest psychological
+            and moral challenge in the form of the Joker.
+          </p>
+          <div class="review-box">
+            <strong>Review:</strong> A masterpiece in superhero cinema with a
+            legendary performance by Heath Ledger.
+          </div>
+        </div>
+
+        <!-- Movie 4 -->
+        <div class="movie">
+          <h2>La La Land</h2>
+          <img
+            src="https://via.placeholder.com/300x400?text=La+La+Land+Poster"
+            alt="La La Land Poster"
+            class="poster"
+          />
+          <p><strong>Genre:</strong> Musical, Romance, Drama</p>
+          <p>
+            <strong>Summary:</strong> A jazz musician and aspiring actress fall
+            in love while chasing their dreams in Los Angeles.
+          </p>
+          <div class="review-box">
+            <strong>Review:</strong> Visually enchanting and emotionally
+            heartfelt, it's a modern musical with timeless charm.
+          </div>
+        </div>
+
+        <!-- Movie 5 -->
+        <div class="movie">
+          <h2>The Social Network</h2>
+          <img
+            src="https://via.placeholder.com/300x400?text=Social+Network+Poster"
+            alt="Social Network Poster"
+            class="poster"
+          />
+          <p><strong>Genre:</strong> Biography, Drama</p>
+          <p>
+            <strong>Summary:</strong> The rise of Facebook and its co-founder
+            Mark Zuckerberg amid lawsuits and ambition.
+          </p>
+          <div class="review-box">
+            <strong>Review:</strong> Intelligently written and sharply directed,
+            offering a fascinating look at modern tech culture.
+          </div>
+        </div>
+      </div>
+
+      <div data-role="footer" data-position="fixed">
+        <h4>&copy; 2025 PICT Movie Club</h4>
+      </div>
+    </div>
+  </body>
+</html>

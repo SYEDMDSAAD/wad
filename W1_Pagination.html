@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Catalog</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+      }
+      img {
+        width: 60px;
+      }
+      .pagination {
+        margin-top: 20px;
+        text-align: center;
+      }
+      button {
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Product Catalog</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Image</th>
+          <th>Price (₹)</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody id="product-body"></tbody>
+    </table>
+
+    <div class="pagination">
+      <button onclick="prevPage()">Previous</button>
+      <span id="page-info"></span>
+      <button onclick="nextPage()">Next</button>
+    </div>
+
+    <script>
+      const products = [
+        {
+          name: "Wireless Headphones",
+          image: "https://via.placeholder.com/60",
+          price: 7999,
+          desc: "Noise-cancelling over-ear headphones.",
+        },
+        {
+          name: "Smartwatch",
+          image: "https://via.placeholder.com/60",
+          price: 12999,
+          desc: "Fitness tracking smartwatch.",
+        },
+        {
+          name: "Gaming Mouse",
+          image: "https://via.placeholder.com/60",
+          price: 2499,
+          desc: "Ergonomic gaming mouse.",
+        },
+        {
+          name: "Laptop Stand",
+          image: "https://via.placeholder.com/60",
+          price: 1999,
+          desc: "Adjustable aluminium stand.",
+        },
+        {
+          name: "Bluetooth Speaker",
+          image: "https://via.placeholder.com/60",
+          price: 2999,
+          desc: "Portable speaker.",
+        },
+        {
+          name: "Webcam",
+          image: "https://via.placeholder.com/60",
+          price: 3499,
+          desc: "HD webcam.",
+        },
+        {
+          name: "Keyboard",
+          image: "https://via.placeholder.com/60",
+          price: 5999,
+          desc: "Mechanical keyboard.",
+        },
+        {
+          name: "Hard Drive",
+          image: "https://via.placeholder.com/60",
+          price: 6499,
+          desc: "1TB storage.",
+        },
+        {
+          name: "Monitor",
+          image: "https://via.placeholder.com/60",
+          price: 10499,
+          desc: "24-inch monitor.",
+        },
+        {
+          name: "USB Hub",
+          image: "https://via.placeholder.com/60",
+          price: 899,
+          desc: "4-port USB hub.",
+        },
+        {
+          name: "Wireless Charger",
+          image: "https://via.placeholder.com/60",
+          price: 1599,
+          desc: "Fast charger.",
+        },
+      ];
+
+      let page = 1;
+      const perPage = 5;
+
+      function showProducts() {
+        const start = (page - 1) * perPage;
+        const end = start + perPage;
+        const shown = products.slice(start, end);
+
+        const tbody = document.getElementById("product-body");
+        tbody.innerHTML = "";
+
+        shown.forEach((p) => {
+          const row = `<tr>
+                        <td>${p.name}</td>
+                        <td><img src="${p.image}" alt="${p.name}"></td>
+                        <td>₹${p.price}</td>
+                        <td>${p.desc}</td>
+                      </tr>`;
+          tbody.innerHTML += row;
+        });
+
+        const totalPages = Math.ceil(products.length / perPage);
+        document.getElementById(
+          "page-info"
+        ).innerText = `Page ${page} of ${totalPages}`;
+      }
+
+      function nextPage() {
+        if (page < Math.ceil(products.length / perPage)) {
+          page++;
+          showProducts();
+        }
+      }
+
+      function prevPage() {
+        if (page > 1) {
+          page--;
+          showProducts();
+        }
+      }
+
+      showProducts();
+    </script>
+  </body>
+</html>

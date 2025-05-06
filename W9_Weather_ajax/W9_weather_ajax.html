@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      width: 80%;
+    }
+    button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 85%;
+    }
+    .weather-info {
+      margin-top: 20px;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Weather App</h2>
+    <input type="text" id="city" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div class="weather-info" id="weather-info"></div>
+    <div class="error" id="error-message"></div>
+  </div>
+
+  <script>
+    function getWeather() {
+      const city = document.getElementById("city").value.trim();
+      const errorMessage = document.getElementById("error-message");
+      const weatherInfo = document.getElementById("weather-info");
+      errorMessage.innerHTML = '';
+      weatherInfo.innerHTML = '';
+      
+      if (city === '') {
+        errorMessage.innerHTML = "Please enter a city name.";
+        return;
+      }
+
+      // Fetch the local JSON file (weather data)
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "weather_data.json", true);
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          const cityKey = Object.keys(data).find(key => key.toLowerCase() === city.toLowerCase());
+          if (cityKey) {
+            const cityWeather = data[cityKey];
+            weatherInfo.innerHTML = `
+              <h3>Weather in ${cityKey}</h3>
+              <p>Temperature: ${cityWeather.temperature}</p>
+              <p>Humidity: ${cityWeather.humidity}</p>
+              <p>Conditions: ${cityWeather.conditions}</p>
+            `;
+          } else {
+            errorMessage.innerHTML = `Weather data for "${city}" is not available.`;
+          }
+        } else {
+          errorMessage.innerHTML = "Error fetching weather data.";
+        }
+      };
+      xhr.onerror = function() {
+        errorMessage.innerHTML = "Error fetching weather data.";
+      };
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
+<!--python -m http.server 8000-->

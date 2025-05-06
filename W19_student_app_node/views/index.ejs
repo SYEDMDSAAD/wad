@@ -1,0 +1,48 @@
+<!-- views/index.ejs -->
+<html>
+  <head>
+    <title>Student Data</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table, th, td {
+        border: 1px solid black;
+      }
+      th, td {
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Roll No</th>
+          <th>WAD Marks</th>
+          <th>CC Marks</th>
+          <th>DSBDA Marks</th>
+          <th>CNS Marks</th>
+          <th>AI Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% students.forEach(student => { %>
+          <tr>
+            <td><%= student.Name %></td>
+            <td><%= student.Roll_No %></td>
+            <td><%= student.WAD_Marks %></td>
+            <td><%= student.CC_Marks %></td>
+            <td><%= student.DSBDA_Marks %></td>
+            <td><%= student.CNS_Marks %></td>
+            <td><%= student.AI_marks %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

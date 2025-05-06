@@ -1,0 +1,17 @@
+<div class="container mt-4">
+    <h2>Angular Standalone To-Do List</h2>
+  
+    <input [(ngModel)]="newTask" class="form-control" placeholder="New Task" />
+    <button (click)="addTask()" class="btn btn-primary mt-2">Add Task</button>
+  
+    <ul class="list-group mt-3">
+      <li *ngFor="let task of tasks; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+        {{ task }}
+        <div>
+          <button (click)="editTask(i)" class="btn btn-sm btn-warning me-2">Edit</button>
+          <button (click)="deleteTask(i)" class="btn btn-sm btn-danger">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
